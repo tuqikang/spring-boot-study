@@ -5,3 +5,5 @@ spring:
       port: 27017
       authentication-database: basic
       database: tqk
+server:
+  port: 8888

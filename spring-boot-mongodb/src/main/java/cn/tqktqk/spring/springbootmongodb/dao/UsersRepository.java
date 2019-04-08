@@ -3,7 +3,6 @@ package cn.tqktqk.spring.springbootmongodb.dao;
 import cn.tqktqk.spring.springbootmongodb.model.Users;
 import org.springframework.data.mongodb.repository.MongoRepository;
 
-import java.util.List;
 
 /**
  * ___________ ________     ____  __.

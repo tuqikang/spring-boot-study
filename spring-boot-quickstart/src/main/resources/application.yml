@@ -1,1 +1,10 @@
 myname: tuqikang
+
+
+#server:
+#  port: 8888
+spring:
+#  application:
+#    name: my-quickstart
+  profiles:
+    active: dev

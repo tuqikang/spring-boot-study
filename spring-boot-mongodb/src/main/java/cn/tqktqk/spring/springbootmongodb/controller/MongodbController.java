@@ -1,5 +1,6 @@
 package cn.tqktqk.spring.springbootmongodb.controller;
 
+import cn.tqktqk.spring.springbootmongodb.model.Users;
 import cn.tqktqk.spring.springbootmongodb.service.UsersMongoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -36,4 +37,13 @@ public class MongodbController {
         return usersMongoService.getUserByName(name);
     }
 
+    @PatchMapping
+    public void saveUser(@RequestBody Users users){
+        usersMongoService.saveUser(users);
+    }
+
+    @DeleteMapping("/{id}")
+    public void del(@PathVariable String id){
+        usersMongoService.delete(id);
+    }
 }
