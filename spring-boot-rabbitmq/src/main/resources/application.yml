@@ -4,6 +4,7 @@ spring:
     port: 5672
     username: guest
     password: guest
-
 mq:
   queue: HELLO
+server:
+  port: 10088

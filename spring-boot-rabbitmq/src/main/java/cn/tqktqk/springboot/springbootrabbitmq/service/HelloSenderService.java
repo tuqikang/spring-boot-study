@@ -35,4 +35,16 @@ public class HelloSenderService {
         logger.info(userInfo.toString());
         amqpTemplate.convertAndSend(MqFeildConst.QUEUE_NAME,userInfo);
     }
+
+    public void send1() {
+        String context = "hi, i am message 1";
+        System.out.println("Sender : " + context);
+        this.amqpTemplate.convertAndSend("exchange", "topic.message.one", context);
+    }
+
+    public void send2() {
+        String context = "hi, i am messages 2";
+        System.out.println("Sender : " + context);
+        this.amqpTemplate.convertAndSend("exchange", "topic.message.two", context);
+    }
 }

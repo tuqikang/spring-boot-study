@@ -19,14 +19,30 @@ import org.springframework.stereotype.Service;
  * @Date: 2019-04-16 15:56
  */
 @Service
-@RabbitListener(queues = MqFeildConst.QUEUE_NAME)
+
 public class HelloReceiverService {
 
     private final Logger logger = LoggerFactory.getLogger(this.getClass());
 
+
     @RabbitHandler
+    @RabbitListener(queues = MqFeildConst.QUEUE_NAME)
     public void process(UserInfo userInfo){
 //        logger.info("Receiver  : " + message);
         logger.info(userInfo.toString());
+    }
+
+    //接收者
+    @RabbitHandler
+    @RabbitListener(queues = "ONE")
+    public void process1(String s) {
+        logger.info("Receiver ONE message : " + s);
+    }
+
+    //接收者
+    @RabbitHandler
+    @RabbitListener(queues = "TWO")
+    public void process2(String s) {
+        logger.info("Receiver TWO message : " + s);
     }
 }

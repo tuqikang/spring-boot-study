@@ -3,10 +3,7 @@ package cn.tqktqk.springboot.springbootrabbitmq.controller;
 import cn.tqktqk.springboot.springbootrabbitmq.model.UserInfo;
 import cn.tqktqk.springboot.springbootrabbitmq.service.HelloSenderService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 /**
  * ___________ ________     ____  __.
@@ -28,5 +25,11 @@ public class HelloTestContorller {
     @PostMapping
     public void send(@RequestBody UserInfo userInfo){
         senderService.send(userInfo);
+    }
+
+    @GetMapping
+    public void initTest(){
+        senderService.send1();
+        senderService.send2();
     }
 }

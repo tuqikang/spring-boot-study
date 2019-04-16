@@ -12,5 +12,7 @@ package cn.tqktqk.springboot.springbootrabbitmq.config;
  */
 public class MqFeildConst {
     public static final String QUEUE_NAME="HELLO";
+    public final static String MESSAGE_ONE = "ONE";
+    public final static String MESSAGE_TWO = "TWO";
 
 }
