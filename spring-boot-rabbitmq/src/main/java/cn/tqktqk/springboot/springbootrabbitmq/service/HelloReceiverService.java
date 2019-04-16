@@ -1,6 +1,7 @@
 package cn.tqktqk.springboot.springbootrabbitmq.service;
 
 import cn.tqktqk.springboot.springbootrabbitmq.config.MqFeildConst;
+import cn.tqktqk.springboot.springbootrabbitmq.model.UserInfo;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.amqp.rabbit.annotation.RabbitHandler;
@@ -24,7 +25,8 @@ public class HelloReceiverService {
     private final Logger logger = LoggerFactory.getLogger(this.getClass());
 
     @RabbitHandler
-    public void process(String message){
-        logger.info("Receiver  : " + message);
+    public void process(UserInfo userInfo){
+//        logger.info("Receiver  : " + message);
+        logger.info(userInfo.toString());
     }
 }

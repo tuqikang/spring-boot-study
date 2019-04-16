@@ -1,6 +1,7 @@
 package cn.tqktqk.springboot.springbootrabbitmq.service;
 
 import cn.tqktqk.springboot.springbootrabbitmq.config.MqFeildConst;
+import cn.tqktqk.springboot.springbootrabbitmq.model.UserInfo;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.amqp.core.AmqpTemplate;
@@ -27,9 +28,11 @@ public class HelloSenderService {
     @Autowired
     private AmqpTemplate amqpTemplate;
 
-    public void send(){
-        String message = "hello "+ LocalDateTime.now();
-        logger.info("send info :"+message);
-        amqpTemplate.convertAndSend(MqFeildConst.QUEUE_NAME,message);
+    public void send(UserInfo userInfo){
+//        String message = "hello "+ LocalDateTime.now();
+//        logger.info("send info :"+message);
+//        amqpTemplate.convertAndSend(MqFeildConst.QUEUE_NAME,message);
+        logger.info(userInfo.toString());
+        amqpTemplate.convertAndSend(MqFeildConst.QUEUE_NAME,userInfo);
     }
 }
