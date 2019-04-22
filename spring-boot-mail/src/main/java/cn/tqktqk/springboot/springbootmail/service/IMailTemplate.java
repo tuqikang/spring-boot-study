@@ -1,5 +1,9 @@
 package cn.tqktqk.springboot.springbootmail.service;
 
+import cn.tqktqk.springboot.springbootmail.model.ImageInfo;
+
+import java.util.List;
+
 /**
  * ___________ ________     ____  __.
  * \__    ___/ \_____  \   |    |/ _|
@@ -18,7 +22,7 @@ public interface IMailTemplate {
 
     void attachmentMail(String from,String[] to,String subject,String context,String attachmentPath)throws Exception;
 
-    void imagesMail(String from,String[] to,String subject,String... imagePath)throws Exception;
+    void imagesMail(String from, String[] to, String subject, String context, List<ImageInfo> imageInfos)throws Exception;
 
-    void templateMail(String from,String[] to,String subject,String context)throws Exception;
+    void templateMail(String from,String to,String subject,String templateName)throws Exception;
 }
