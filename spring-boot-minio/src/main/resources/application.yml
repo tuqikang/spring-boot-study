@@ -1,0 +1,7 @@
+
+minio:
+  url: url
+  accessKey: accessKey
+  secretKey: secretKey
+server:
+  port: 8989
