@@ -11,15 +11,15 @@ import org.springframework.test.context.junit4.SpringRunner;
 @SpringBootTest
 public class SpringBootMinioApplicationTests {
 
-    @Autowired
-    private MinioService minioService;
-
-    @Test
-    public void contextLoads() {
-    }
-
-    @Test
-    public void load(){
-        minioService.upload();
-    }
+//    @Autowired
+//    private MinioService minioService;
+//
+//    @Test
+//    public void contextLoads() {
+//    }
+//
+//    @Test
+//    public void load(){
+//        minioService.upload();
+//    }
 }

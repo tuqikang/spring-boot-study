@@ -27,7 +27,7 @@ public class MinioService {
 
     private static Logger logger = LoggerFactory.getLogger(MinioService.class);
 
-    public final String BUCKET = "data1";
+    public final String BUCKET = "blog";
 
     @Autowired
     private MinioClient minioClient;
